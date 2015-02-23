@@ -27,9 +27,16 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to users_path, notice: "User was successfully updated."
+    else
+      render :new
+    end
   end
 
   def destroy
+    @user.destroy
+    redirect_to users_path, notice: "User was successfully deleted."
   end
 
   private
