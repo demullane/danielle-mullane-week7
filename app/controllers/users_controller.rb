@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :find_params, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
 
   def index
     @users = User.all
@@ -48,5 +49,15 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:user_name, :password, :about)
   end
+
+  def authenticate
+    redirect_to '/login' unless current_user
+  end
+
+  #def current_user
+    #if session[:student_id]
+      #@current_student ||=Student.find(session[:student_id])
+    #end
+  #end
 
 end

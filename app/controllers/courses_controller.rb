@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
 
   before_action :find_params, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
 
   def index
     @courses = Course.all
@@ -46,6 +47,10 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:title, :day_night)
+  end
+
+  def authenticate
+    redirect_to '/login' unless current_user
   end
 
 end
