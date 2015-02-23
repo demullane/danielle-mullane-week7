@@ -1,0 +1,27 @@
+<% if @course.errors.any? %>
+  <div>
+    <h4><%= pluralize(@course.errors.count, "error") %> prohibited this task from being saved:</h4>
+    <ul>
+      <% @course.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @course do |f| %>
+  <div>
+    <%= f.label :title, "Title: " %>
+    <%= f.text_field :title %>
+  </div>
+  <p></p>
+  <div>
+    <%= f.label :day_night, "Day or Night? :" %>
+    <%= f.select :day_night, [['Day', true], ['Night', false]] %>
+  </div>
+  <p></p>
+  <div>
+    <%= f.submit %>
+  </div>
+  <p><%= link_to 'Cancel', courses_path %></p>
+<% end %>

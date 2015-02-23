@@ -8,7 +8,7 @@ def create
   @user = User.new(user_params)
   if @user.save
     session[:user_id] = @user.id
-    redirect_to users_path, notice: "You have successfully signed up and logged in."
+    redirect_to courses_path, notice: "You have successfully signed up and logged in."
   else
     render :new
   end
