@@ -1,5 +1,7 @@
 <h2>ALL USERS</h2>
 
+<p><%= link_to "New User", new_user_path %></p>
+
 <table>
   <thead>
     <tr>
@@ -9,10 +11,11 @@
   </thead>
 
   <tbody>
-    <% @users.each do |f| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= link_to f.user_name, f %></td>
-        <td><%= f.about %></td>
+        <td><%= link_to user.user_name, user %></td>
+        <td><%= user.about %></td>
+        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>

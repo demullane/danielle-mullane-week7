@@ -1,5 +1,16 @@
 <h2>SIGN UP</h2>
 
+<% if @user.errors.any? %>
+  <div>
+    <h4><%= pluralize(@user.errors.count, "error") %> prohibited this task from being saved:</h4>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for (@user), url: signup_path do |f| %>
   <div>
     <%= f.label :user_name, "Username: " %>

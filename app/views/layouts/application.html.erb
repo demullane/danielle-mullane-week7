@@ -9,6 +9,7 @@
 <body>
 
   <% if current_user %>
+    You are currently signed in as: <%= current_user.user_name %>
     <%= link_to 'Logout', logout_path %>
   <% elsif request.original_fullpath == "/signup" %>
     <%= link_to 'Login', login_path %>
