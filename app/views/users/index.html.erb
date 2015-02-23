@@ -11,7 +11,7 @@
   <tbody>
     <% @users.each do |f| %>
       <tr>
-        <td><%= f.user_name %></td>
+        <td><%= link_to f.user_name, f %></td>
         <td><%= f.about %></td>
       </tr>
     <% end %>
