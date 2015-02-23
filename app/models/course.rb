@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
 
-  validates :title, presence: true, uniqueness: true
-  validates :day_night
+  validates :title, presence: true
+  validates :day_night, presence: true
 
 end

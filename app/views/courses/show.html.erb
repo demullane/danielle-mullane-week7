@@ -1,0 +1,7 @@
+<h2><%= @course.title.capitalize %>'s Page</h2>
+
+<p>Title: <%= @course.title %></p>
+<p>Day or Night? <%= @course.day_night ? 'Day' : 'Night' %></p>
+
+<%= link_to "Edit", edit_course_path %>
+<%= link_to "All Courses", courses_path %>
