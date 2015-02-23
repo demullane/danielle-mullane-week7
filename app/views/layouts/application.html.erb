@@ -8,7 +8,35 @@
 </head>
 <body>
 
-<%= yield %>
+  <% flash.each do |type, message| %>
+    <% if type == "notice" %>
+    <b>
+      <center>
+        <div>
+          <%= message %>
+        </div>
+      </center>
+    </b>
+    <% elsif type == "error" %>
+    <b>
+      <center>
+        <div>
+          <%= flash[:error] %>
+        </div>
+      </center>
+    </b>
+    <% elsif type == "alert" %>
+    <b>
+      <center>
+        <div>
+          <%= message %>
+        </div>
+      </center>
+    </b>
+    <% end %>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>
