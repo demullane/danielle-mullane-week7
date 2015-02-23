@@ -1,28 +1,91 @@
-== README
+#### Rails Crud Assessment
+- There will be three parts to this.
+- Rails/View stories
+- Capybara testing.
+- Developer Workflow / Git.
+- Don't worry about bootstrap or CSS.
+- Rails new your-name-week7 --database postgresql
+- Once again, don't worry about bootstrap or CSS.
+- Remember to not worry about bootstrap or css.
+- Seriously stop thinking about adding boostrap...
+- GL, HF
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###### Github
+- Initialize a github repo
+- Create a github repository called your-name-week7 on github.
+- Push all commits here.
+- Remember to commit clearly and frequently.
 
-Things you may want to cover:
+######  Data Model
+- We are setting up a School.
+- The models are Courses and Users.
 
-* Ruby version
+```
+- Users have
+  - user_name, string.
+  - password_digest, string.
+  - about, string.
 
-* System dependencies
+- Courses have
+  - title, string.
+  - day/night, boolean. (it either happens as a night class or day class)
 
-* Configuration
+```
 
-* Database creation
+###### Rails View Stories
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Application layout should have login link if no current user and logout link if there is a current user.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+1. Crud Users
+  - Show Page
+  - New page
+  - Edit Page
+  - Index page showing all users
+
+Remember to add validations so Users can not have the same user_name
+
+2. Authentication for Users
+    - login page
+
+```
+
+Login page:
+
+```
+user_name:
+password:
+Login
+
+```
+
+Courses Index Page
+```
+Title           | day or night
+statistics 101  | Day            | Delete Course
+programming 101 | Night          | Delete Course
+
+```
+
+Courses Show Page
+
+```
+Title: title
+Day or Night: night
+Year: Freshman
+
+```
+###### Capybara Stories
+
+User Authentication
+```
+Test valid users can log in.
+
+```
+
+Courses Crud
+```
+Test that users can CRUD courses.
+
+```
