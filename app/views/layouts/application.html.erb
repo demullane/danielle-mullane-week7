@@ -10,7 +10,10 @@
 
   <% if current_user %>
     <%= link_to 'Logout', logout_path %>
+  <% elsif request.original_fullpath == "/signup" %>
+    <%= link_to 'Login', login_path %>
   <% else %>
+    <%= link_to 'Sign Up', signup_path %>
     <%= link_to 'Login', login_path %>
   <% end %>
 
