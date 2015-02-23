@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @user and @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to users_path, notice: "You have successfully logged in."
+      redirect_to courses_path, notice: "You have successfully logged in."
     else
       flash[:error] = "Username / password combination is invalid."
       render :new
